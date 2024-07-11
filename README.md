@@ -9,11 +9,7 @@
 
 <h3 align="center">Redux Course Project #2 - <a href="https://ui-polls.netlify.app/">Polls</a></h3>
 
-### Info
 
-This is the repository for [UI.dev](https://ui.dev)'s "Redux #2" course project.
-
-For more information on the course, visit __[ui.dev/redux](https://ui.dev/redux/)__.
 
 ### Project
 
@@ -38,3 +34,9 @@ Below every `(Project)` video in the course will be a direct link to both the co
 ![](https://user-images.githubusercontent.com/2933430/81010652-d2c6fb00-8e13-11ea-8fa2-188b87f15db0.png)
 
 ![](https://user-images.githubusercontent.com/2933430/81010661-d65a8200-8e13-11ea-8db2-4571602b9fa1.png)
+
+### Info
+
+This project is built as a learning process of Redux from [UI.dev](https://ui.dev)'s "Redux #2" course.
+
+For more information on the course, visit __[ui.dev/redux](https://ui.dev/redux/)__.
