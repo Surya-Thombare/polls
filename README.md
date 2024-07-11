@@ -15,7 +15,7 @@
 
 This project is a polls app fully managed with redux state management.
 
-- this includes fake data stored in json
+- this includes fake data stored in JSON
 
 - users can creat answer and view polls
 
