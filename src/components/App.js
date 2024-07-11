@@ -4,6 +4,7 @@ import { handleIntialData } from '../actions/shared'
 import LeaderBoard from './leaderBoard'
 import Dashboard from './dashboard'
 import { BrowserRouter as Router } from 'react-router-dom/cjs/react-router-dom.min'
+import AddPoll from './addPoll'
 
 export default function App() {
   const dispatch = useDispatch()
@@ -21,7 +22,7 @@ export default function App() {
         {loading === true
           ? null
           : <div>
-            <Dashboard />
+            <AddPoll />
           </div>
         }
       </div>
