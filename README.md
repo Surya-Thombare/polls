@@ -13,17 +13,14 @@
 
 ### Project
 
-This project is a polls app.
+This project is a polls app fully managed with redux state management.
 
-You can view the final project __[here](https://ui-polls.netlify.app/)__
+- this includes fake data stored in json
 
-### Branches
+- users can creat answer and view polls
 
-Every `(Project)` video in the course coincides with a branch in this repo. If you want to compare your code with Tyler's or you just want to play around with the code, check out the different branches.
+- users can see the leaderboard
 
-Below every `(Project)` video in the course will be a direct link to both the commit for that video as well as its branch.
-
-<img align='center' src='https://user-images.githubusercontent.com/2933430/53434937-df9cc300-39b4-11e9-8e8f-5bdd212cac2d.png' width='200' />
 
 ### Project Preview
 
