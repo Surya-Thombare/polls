@@ -1,7 +1,7 @@
-import * as React from "react"
-import { handleAddPoll } from "../actions/polls"
-import { useHistory } from "react-router-dom"
-import { useDispatch } from "react-redux"
+import * as React from 'react'
+import { handeAddPoll } from '../actions/polls'
+import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 
 export default function AddPoll() {
   const history = useHistory()
@@ -10,13 +10,13 @@ export default function AddPoll() {
   const [options, setOptions] = React.useState({
     a: '', b: '', c: '', d: ''
   })
+
   const [question, setQuestion] = React.useState('')
 
   const handleSubmit = (e) => {
-    e.PreventDefault()
-
+    e.preventDefault()
     history.push('/')
-    dispatch(handleAddPoll({
+    dispatch(handeAddPoll({
       question,
       ...options
     }))
@@ -24,7 +24,11 @@ export default function AddPoll() {
 
   const handleInputChange = ({ target }) => {
     const { value, name } = target
-    setOptions({ ...options, [name]: value })
+
+    setOptions({
+      ...options,
+      [name]: value
+    })
   }
 
   const isDisabled = () => {
@@ -36,7 +40,7 @@ export default function AddPoll() {
   }
 
   return (
-    <form className="add-form" onSubmit={handleSubmit}>
+    <form className='add-form' onSubmit={handleSubmit}>
       <h3 style={{ marginBottom: 5 }}>What is your question?</h3>
       <input
         value={question}
@@ -46,7 +50,7 @@ export default function AddPoll() {
         type="text"
       />
 
-      <h3>What are the Options</h3>
+      <h3>What are the options?</h3>
 
       <label className="label" htmlFor="input">A.</label>
       <input
@@ -54,7 +58,7 @@ export default function AddPoll() {
         onChange={handleInputChange}
         name='a'
         className="input"
-        type='text'
+        type="text"
       />
 
       <label className="label" htmlFor="input">B.</label>
@@ -63,7 +67,7 @@ export default function AddPoll() {
         onChange={handleInputChange}
         name='b'
         className="input"
-        type='text'
+        type="text"
       />
 
       <label className="label" htmlFor="input">C.</label>
@@ -72,7 +76,7 @@ export default function AddPoll() {
         onChange={handleInputChange}
         name='c'
         className="input"
-        type='text'
+        type="text"
       />
 
       <label className="label" htmlFor="input">D.</label>
@@ -81,14 +85,12 @@ export default function AddPoll() {
         onChange={handleInputChange}
         name='d'
         className="input"
-        type='text'
+        type="text"
       />
 
-      <button className="btn" type="submit" disabled={isDisabled()}>
-        submit
+      <button className='btn' type='submit' disabled={isDisabled()}>
+        Submit
       </button>
     </form>
   )
 }
-
-

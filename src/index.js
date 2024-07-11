@@ -8,8 +8,6 @@ import reducer from './reducers'
 import LoadingBar from 'react-redux-loading'
 import middleware from './middleware'
 
-
-
 function ColorfulBorder() {
   return (
     <React.Fragment>

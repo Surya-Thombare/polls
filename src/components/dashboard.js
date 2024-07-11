@@ -1,10 +1,8 @@
-import * as React from "react"
-import { useSelector } from "react-redux"
-import { Link } from "react-router-dom"
+import * as React from 'react'
+import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-
-
-export default function Dashboard(params) {
+export default function Dashboard() {
   const [list, setList] = React.useState('unanswered')
   const authedUser = useSelector((state) => state.authedUser)
   const users = useSelector((state) => state.users)
@@ -12,48 +10,48 @@ export default function Dashboard(params) {
 
   const answers = users[authedUser].answers
 
-  const answered = answers.map((id) => polls[id]).sort((a, b) => b.timeStamp - a.timeStamp)
+  const answered = answers.map((id) => polls[id])
+    .sort((a, b) => b.timestamp - a.timestamp)
 
   const unanswered = Object.keys(polls)
-    .filter((id) => !answers
-      .includes(id))
+    .filter((id) => !answers.includes(id))
     .map((id) => polls[id])
-    .sort((a, b) => b.timeStamp - a.timeStamp)
+    .sort((a, b) => b.timestamp - a.timestamp)
 
   const questions = { answered, unanswered }
 
   return (
-    <>
-      <div className="dashboard-toggle">
+    <React.Fragment>
+      <div className='dashboard-toggle'>
         <button
           style={{
-            textDecoration: list === 'unanswered' ? 'underline' : 'none'
+            textDecoration: list === 'unanswered'
+              ? 'underline'
+              : null
           }}
-          onClick={() => setList('unanswered')}
-        >
+          onClick={() => setList('unanswered')}>
           Unanswered
         </button>
-        <span>|</span>
+        <span> | </span>
         <button
           style={{
-            textDecoration: list === 'answered' ? 'underline' : 'none'
+            textDecoration: list === 'answered'
+              ? 'underline'
+              : null
           }}
-          onClick={() => setList('answered')}
-        >
+          onClick={() => setList('answered')}>
           Answered
         </button>
       </div>
-      <ul className="dashboard-list">
-        {
-          questions[list].map((poll) => (
-            <li key={poll.id}>
-              <Link to={`polls/${poll.id}`}>
-                {poll.question}
-              </Link>
-            </li>
-          ))
-        }
+      <ul className='dashboard-list'>
+        {questions[list].map((poll) => (
+          <li key={poll.id}>
+            <Link to={`polls/${poll.id}`}>
+              {poll.question}
+            </Link>
+          </li>
+        ))}
       </ul>
-    </>
+    </React.Fragment>
   )
 }
