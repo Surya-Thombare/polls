@@ -7,7 +7,7 @@
   <br />
 </h1>
 
-<h3 align="center">Redux Course Project #2 - <a href="https://ui-polls.netlify.app/">Polls</a></h3>
+<h3 align="center">Redux Course Project #2 - <a href="https://polls-chi.vercel.app/">Polls</a></h3>
 
 
 
@@ -17,7 +17,7 @@ This project is a polls app fully managed with redux state management.
 
 - this includes fake data stored in JSON
 
-- users can creat answer and view polls
+- users can create, answer and view polls
 
 - users can see the leaderboard
 
